@@ -1,0 +1,5 @@
+﻿  Functions.cpp
+  TODOlist.cpp
+  Создание кода...
+TODOlist.obj : error LNK2019: ссылка на неразрешенный внешний символ "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > * __cdecl find_one_note(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,int &)" (?find_one_note@@YAPEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV12@AEAH@Z) в функции main.
+C:\Users\Семён\source\repos\TODOlist\x64\Debug\TODOlist.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
