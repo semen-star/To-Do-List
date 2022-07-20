@@ -46,7 +46,7 @@ void see_all_notes() {
 	file.close();
 }//просмотр всех заметок в файле
 
-string* find_one_one(string& note_to_find, int& n_count) {
+string* find_one_note(string& note_to_find, int& n_count) {
 	ifstream file("notes.txt");
 	if (!file.is_open())
 	{
