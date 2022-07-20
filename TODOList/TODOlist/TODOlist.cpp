@@ -95,6 +95,7 @@ int main()
             else {
                 x = 0;
             }
+        }
         else {
             cout << "ERROR!";
             cout << endl;
