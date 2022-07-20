@@ -15,6 +15,7 @@ enum CHOICE {
    SEE_DATE_NOTES,//development stage
    EXIT
 };
+/*
 struct affairs {
     char name;
     int priority;
@@ -25,18 +26,25 @@ struct date {
         unsigned int mounth;
         int year;
     };
+    */
 int main()
 {
     setlocale(LC_ALL, "");
     SetConsoleCP(1251);
     HANDLE hOUTPUT = GetStdHandle(STD_OUTPUT_HANDLE);
     int choice = 0;
-    cout << "Внимание! Дела хранятся в памяти.\n\nУ всех дел есть несколько критериев. Спасибо за использование.\n\nP.s. Автор приколист.";
+    cout << "Внимание! Дела НЕ хранятся в памяти.\n\nУ всех дел есть несколько критериев. Спасибо за использование.\n\nP.s. Автор приколист.";
     Sleep(3000);
     bool x = 1;
+    int z=1;
     system("cls");
+    /*
+    cout << "Введите количество заметок:";
+    cin >> z;
+    system("cls");
+    */
     while (x != 0) {
-        system("cls");
+        
         show_menu();
         cout << endl << "Сделайте выбор:";
         cin >> choice;
@@ -99,10 +107,11 @@ int main()
             system("pause");
         }
         else if (choice == EXIT) {
-            cout << "Are you shure? All do deletes!\nIf you shure input 1,else 0";
+            cout << "Are you shure? All affairs deletes!\nif you are sure, then enter 1. Or enter 0\n\nInput:";
             bool f = 0;
+            cin >> f;
             if (f == 0) {
-
+                continue;
             }
             else {
                 x = 0;

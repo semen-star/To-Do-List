@@ -14,15 +14,58 @@ void show_menu() {
 	cout << "[7] Вывод дел по дате development stage" << endl;
 	cout << "[8] Выход" << endl;
 }//вывод меню
-
-void add_note(string& new_note) {
-	cout << new_note;
+void importance() {
+	cout << "Выберите насколько важно это дело:\n\t1.Очень важно\n\t2.Важно\n\t3.Обычно\n\nОжидается выбор:";
+}
+	
+void add_note() {
 	ofstream file("notes.txt", ios::app);
 	if (!file.is_open()) {
 		cout << "ERROR!! File isn't open!";
 		exit(EXIT_FAILURE);
 	}
-	file << new_note << endl;
+	{
+		cout << "Введите название заметки:";
+		string note_name;
+		getline(cin, note_name);
+		file << note_name << endl;
+	}//name note
+	{
+		importance();
+		int x=0;
+		cin >> x;
+		string priority;
+		if (x == 0) {
+			cout << "ERROR!";
+		}
+		else if (x == 1) {
+			priority = "Очень важно";
+		}
+		else if (x == 2) {
+			priority = "Важно";
+		}
+		else if (x == 3) {
+			priority = "Обычно";
+		}
+		file << priority << endl;
+	}//note priority
+	{
+		string description;
+		cout << "Введите описание заметки:";
+		getline(cin, description);
+		file << description << endl;
+	}//note description
+	{
+		unsigned int day=-5;
+		unsigned int mounth=-5;
+		int year=0;
+		
+		while (day < 31 and day>0 and mounth>0 and mounth<12) {
+			cout << "Введите дату(формат:\"dd mm yyyy\"):";
+			cin >> day >> mounth >> year;
+		}
+		file<<day<< " "<<mounth<<" " << year << endl;
+	}//date
 
 	file.close();
 	cout <<endl<<"Ваша заметка добавлена успешно!"<<endl;
