@@ -4,16 +4,27 @@
 #include <string>
 #include "Functions.h"
 using namespace std;
+
 enum CHOICE {
-    ADD_NOTE = 1,
-    SEE_ALL_NOTES,
-    FIND_ONE_NOTE,
-    DELETE_ONE_NOTE,
-    DELETE_ALL_NOTES,
-    EXIT
+   SEE_ALL_NOTES=1,
+   ADD_NOTE,
+   DELETE_ONE_NOTE,
+   DELETE_ALL_NOTES,
+   FIND_NOTE,
+   SEE_PRIORITY_NOTES,//development stage
+   SEE_DATE_NOTES,//development stage
+   EXIT
 };
-
-
+struct affairs {
+    char name;
+    int priority;
+    char description;
+};
+struct date {
+        unsigned int day;
+        unsigned int mounth;
+        int year;
+    };
 int main()
 {
     setlocale(LC_ALL, "");
@@ -45,18 +56,18 @@ int main()
             cout << endl << endl;
             system("pause");
         }
-        else if (choice == FIND_ONE_NOTE) {
+        else if (choice == FIND_NOTE) {
             system("cls");
             string note_to_find;
-            cout << "ВНИМАНИЕ! Введите только одно слово для поиска!\nВвод:";
+            cout << "ВНИМАНИЕ! Введите только одно слово для поиска!"<<endl;
             getline(cin, note_to_find);
-            cout << "Note to find:";
+            cout << "Слово для поиска:";
             getline(cin, note_to_find);
             int n_found = 0;
             string* found_notes = find_one_note(note_to_find, n_found);
             if (found_notes)
             {
-                cout << "Найденые заметки:";
+                cout << "Найденые заметки:"<<endl;
                 for (int i = 0; i < n_found; i++)
                     cout << found_notes[i] << endl;
                 delete[] found_notes;
@@ -84,6 +95,7 @@ int main()
         else if (choice == DELETE_ALL_NOTES) {
             system("cls");
             remove_all_notes();
+            cout << "Все заметки удалены." << endl;
             system("pause");
         }
         else if (choice == EXIT) {
@@ -101,6 +113,8 @@ int main()
             cout << endl;
             system("pause");
         }
+        
+        }
         {
             SetConsoleTextAttribute(hOUTPUT, FOREGROUND_RED | FOREGROUND_INTENSITY);
             cout << "Good buy\n";
@@ -109,5 +123,4 @@ int main()
         }
         //good buy to red color
         return 0;
-        }
     }

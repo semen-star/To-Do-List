@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <windows.h>
 using namespace std;
 
 void show_menu() {
@@ -9,8 +10,8 @@ void show_menu() {
 	cout << "[3] Удаление одного дела" << endl;
 	cout << "[4] Удаление всех дел" << endl;
 	cout << "[5] Поиск дел" << endl;
-	cout << "[6] Вывод дел по приоритету" << endl;
-	cout << "[7] Вывод дел по дате" << endl;
+	cout << "[6] Вывод дел по приоритету development stage" << endl;
+	cout << "[7] Вывод дел по дате development stage" << endl;
 	cout << "[8] Выход" << endl;
 }//вывод меню
 
