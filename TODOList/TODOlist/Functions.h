@@ -5,7 +5,7 @@ using namespace std;
 
 void show_menu();//¬ывод меню
 
-void add_note( string & new_note);//добавление заметки
+void add_note();//добавление заметки
 
 void see_all_notes();//ѕоказать все заметки
 

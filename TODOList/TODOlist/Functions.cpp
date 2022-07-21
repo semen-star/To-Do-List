@@ -18,27 +18,28 @@ void importance() {
 	cout << "Выберите насколько важно это дело:\n\t1.Очень важно\n\t2.Важно\n\t3.Обычно\n\nОжидается выбор:";
 }
 	
-void add_note(string& new_note) {
+void add_note() {
 	ofstream file("notes.txt", ios::app);
 	if (!file.is_open()) {
 		cout << "ERROR!! File isn't open!";
 		exit(EXIT_FAILURE);
 	}
 	{
-		cout << "Введите название заметки:";
+		
 		string note_name;
+		getline(cin, note_name);
+		cout << "Введите название дела:";
 		getline(cin, note_name);
 		file << note_name << endl;
 	}//name note
 	{
+		cout << endl;
 		importance();
-		int x=0;
+		int x = 0;
 		cin >> x;
 		string priority;
-		if (x == 0) {
-			cout << "ERROR!";
-		}
-		else if (x == 1) {
+		
+		if (x == 1) {
 			priority = "Очень важно";
 		}
 		else if (x == 2) {
@@ -47,11 +48,14 @@ void add_note(string& new_note) {
 		else if (x == 3) {
 			priority = "Обычно";
 		}
+		
 		file << priority << endl;
 	}//note priority
 	{
 		string description;
-		cout << "Введите описание заметки:";
+		
+		getline(cin, description);
+		cout << "Введите описание дела:";
 		getline(cin, description);
 		file << description << endl;
 	}//note description
@@ -59,8 +63,7 @@ void add_note(string& new_note) {
 		unsigned int day=-5;
 		unsigned int mounth=-5;
 		int year=0;
-		
-		while (day < 31 and day>0 and mounth>0 and mounth<12) {
+		while (day < 31 and day>0 and mounth > 0 and mounth < 12) {
 			cout << "Введите дату(формат:\"dd mm yyyy\"):";
 			cin >> day >> mounth >> year;
 		}
@@ -68,23 +71,26 @@ void add_note(string& new_note) {
 	}//date
 
 	file.close();
-	cout <<endl<<"Ваша заметка добавлена успешно!"<<endl;
+	cout <<endl<<"Ваше дело добавлена успешно!"<<endl;
 }//добавление заметок
 
 void see_all_notes() {
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
-		cout << "Вы не добавили ни одной заметки. Программа не может сделать вывод."<<endl;
+		cout << "Программа не может сделать вывод."<<endl;
 		return;
 	}
-	string one_note;
-	cout << "\t\tВсе заметки:" << endl;
-	for (int i = 1;!file.eof(); i++)
+	string note_name,date,opisaniye,priority;
+	cout << "\t\tВсе дела:" << endl;
+	for (int i = 1;!file.eof(); i+3)
 	{
-		getline(file, one_note);
-		if (one_note.empty())
+		getline(file, note_name);
+		getline(file+1, priority);
+		getline(file+2, opisaniye);
+		getline(file+3, date);
+		if (note_name.empty() and priority.empty() and opisaniye.empty() and date.empty())
 			continue;
-		cout << '[' << i << ']' << one_note << endl;
+		cout << '[' << i << ']' << note_name << endl;
 	}
 
 	file.close();

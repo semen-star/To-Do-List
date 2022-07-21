@@ -29,12 +29,12 @@ struct date {
     */
 int main()
 {
-    setlocale(LC_ALL, "");
+    setlocale(LC_ALL, ""); 
     SetConsoleCP(1251);
     HANDLE hOUTPUT = GetStdHandle(STD_OUTPUT_HANDLE);
     int choice = 0;
-    cout << "Внимание! Дела НЕ хранятся в памяти.\n\nУ всех дел есть несколько критериев. Спасибо за использование.\n\nP.s. Автор приколист.";
-    Sleep(3000);
+    cout << "Внимание! Дела хранятся в памяти.\n\nУ всех дел есть несколько критериев. Спасибо за использование.\n\nP.s. Автор приколист.";
+    //Sleep(3000);
     bool x = 1;
     int z=1;
     system("cls");
@@ -50,19 +50,17 @@ int main()
         cin >> choice;
         if (choice == ADD_NOTE) {
             system("cls");
-            string new_note;
-            getline(cin, new_note);//пропуск переноса строки после !строка 20! (известная проблема)
-            cout << "Заметка для добавления:";
-            getline(cin, new_note);
-            add_note(new_note);
+            add_note();
             cout << endl << endl;
             system("pause");
+            system("cls");
         }
         else if (choice == SEE_ALL_NOTES) {
             system("cls");
             see_all_notes();
             cout << endl << endl;
             system("pause");
+            system("cls");
         }
         else if (choice == FIND_NOTE) {
             system("cls");
@@ -107,7 +105,7 @@ int main()
             system("pause");
         }
         else if (choice == EXIT) {
-            cout << "Are you shure? All affairs deletes!\nif you are sure, then enter 1. Or enter 0\n\nInput:";
+            cout << "Are you shure? All affairs SAVE!\nif you are sure, then enter 1. Or enter 0\n\nInput:";
             bool f = 0;
             cin >> f;
             if (f == 0) {
