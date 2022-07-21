@@ -1,4 +1,44 @@
 ﻿  Functions.cpp
-  TODOlist.cpp
-  Создание кода...
-  TODOlist.vcxproj -> C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\x64\Debug\TODOlist.exe
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(74,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(76,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(78,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(80,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(82,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(84,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(86,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(88,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(97,6): error C3927: "->": конечный тип возвращаемого значения недопустим после оператора объявления, не относящегося к функции.
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(97,6): error C3484: синтаксическая ошибка: требуется "->" перед возвращающим типом
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(97,7): error C3613: отсутствует тип возвращаемого значения после "->" (предполагается int)
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(97,12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(97,7): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "close"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(98,7): error C2143: синтаксическая ошибка: отсутствие ";" перед "<<"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(98,7): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(99,1): error C2059: синтаксическая ошибка: }
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(99,1): error C2143: синтаксическая ошибка: отсутствие ";" перед "}"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(101,22): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(101,22): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(127,7): error C2872: cout: неоднозначный символ
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(98,2): message : может быть "int cout"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\iostream(40,57): message : или       "std::ostream std::cout"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(127,7): error C2297: "<<": недопустимо, поскольку тип правого операнда — "const char [32]"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(127,74): error C2563: несоответствие в списке формальных параметров
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(127,74): error C2568: <<: не удается разрешить перегрузку функции
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(127,74): message : может быть "std::basic_ostream<_Elem,_Traits> &std::endl(std::basic_ostream<_Elem,_Traits> &)"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(161,8): error C2872: cout: неоднозначный символ
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(98,2): message : может быть "int cout"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\iostream(40,57): message : или       "std::ostream std::cout"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(161,8): error C2297: "<<": недопустимо, поскольку тип правого операнда — "const char [23]"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(161,59): error C2563: несоответствие в списке формальных параметров
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(161,59): error C2568: <<: не удается разрешить перегрузку функции
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(161,59): message : может быть "std::basic_ostream<_Elem,_Traits> &std::endl(std::basic_ostream<_Elem,_Traits> &)"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(191,8): error C2872: cout: неоднозначный символ
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(98,2): message : может быть "int cout"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\iostream(40,57): message : или       "std::ostream std::cout"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(191,8): error C2297: "<<": недопустимо, поскольку тип правого операнда — "const char [34]"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(191,8): warning C4552: "<<": результат выражения не используется
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(207,8): error C2872: cout: неоднозначный символ
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(98,2): message : может быть "int cout"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\iostream(40,57): message : или       "std::ostream std::cout"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(207,8): error C2297: "<<": недопустимо, поскольку тип правого операнда — "const char [24]"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(207,8): warning C4552: "<<": результат выражения не используется

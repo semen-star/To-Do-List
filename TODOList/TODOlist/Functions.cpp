@@ -7,11 +7,11 @@ using namespace std;
 void show_menu() {
 	cout << "[1] Просмотр всех дел" << endl;
 	cout << "[2] Добавить дело" << endl;
-	cout << "[3] Удаление одного дела" << endl;
+	cout << "[3] Удаление одного дела[unstable work]" << endl;
 	cout << "[4] Удаление всех дел" << endl;
 	cout << "[5] Поиск дел" << endl;
-	cout << "[6] Вывод дел по приоритету development stage" << endl;
-	cout << "[7] Вывод дел по дате development stage" << endl;
+	cout << "[6] Вывод дел по приоритету[development stage]" << endl;
+	cout << "[7] Вывод дел по дате[development stage]" << endl;
 	cout << "[8] Выход" << endl;
 }//вывод меню
 void importance() {
@@ -63,11 +63,35 @@ void add_note() {
 		unsigned int day=-5;
 		unsigned int mounth=-5;
 		int year=0;
-		while (day < 31 and day>0 and mounth > 0 and mounth < 12) {
+		
 			cout << "Введите дату(формат:\"dd mm yyyy\"):";
 			cin >> day >> mounth >> year;
+			if (mounth >= 9) {
+				string temp;
+				if (mounth == 1)
+					temp = "01";
+				else if (mounth == 2)
+					temp == "02";
+				else if (mounth == 3)
+					temp == "03";
+				else if (mounth == 4)
+					temp == "04";
+				else if (mounth == 5)
+					temp == "05";
+				else if (mounth == 6)
+					temp == "06";
+				else if (mounth == 7)
+					temp == "07";
+				else if (mounth == 8)
+					temp == "08";
+				else if (mounth == 9)
+					temp == "09";
+				file << day << "." << temp << "." << year << endl;
+			}
+			else
+				file<<day<< "."<<mounth<<"." << year << endl;
 		}
-		file<<day<< " "<<mounth<<" " << year << endl;
+		
 	}//date
 
 	file.close();
@@ -85,12 +109,12 @@ void see_all_notes() {
 	for (int i = 1;!file.eof(); i+3)
 	{
 		getline(file, note_name);
-		getline(file+1, priority);
-		getline(file+2, opisaniye);
-		getline(file+3, date);
-		if (note_name.empty() and priority.empty() and opisaniye.empty() and date.empty())
+		getline(file, priority);
+		getline(file, opisaniye);
+		getline(file, date);
+		if (note_name.empty())
 			continue;
-		cout << '[' << i << ']' << note_name << endl;
+		cout << '[' << "!" << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl;//TODO сделать вывод номера дела
 	}
 
 	file.close();
