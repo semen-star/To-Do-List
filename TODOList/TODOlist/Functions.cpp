@@ -85,9 +85,9 @@ void see_all_notes() {
 	for (int i = 1;!file.eof(); i+3)
 	{
 		getline(file, note_name);
-		getline(file+1, priority);
-		getline(file+2, opisaniye);
-		getline(file+3, date);
+		getline(file, priority);
+		getline(file, opisaniye);
+		getline(file, date);
 		if (note_name.empty() and priority.empty() and opisaniye.empty() and date.empty())
 			continue;
 		cout << '[' << i << ']' << note_name << endl;
