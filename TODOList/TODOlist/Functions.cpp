@@ -18,7 +18,7 @@ void importance() {
 	cout << "Выберите насколько важно это дело:\n\t1.Очень важно\n\t2.Важно\n\t3.Обычно\n\nОжидается выбор:";
 }
 	
-void add_note() {
+void add_note(string& new_note) {
 	ofstream file("notes.txt", ios::app);
 	if (!file.is_open()) {
 		cout << "ERROR!! File isn't open!";
