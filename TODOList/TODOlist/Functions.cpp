@@ -5,35 +5,35 @@
 using namespace std;
 
 void show_menu() {
-	cout << "[1] Просмотр всех дел" << endl;
-	cout << "[2] Добавить дело" << endl;
-	cout << "[3] Удаление одного дела[unstable work]" << endl;
-	cout << "[4] Удаление всех дел" << endl;
-	cout << "[5] Поиск дел" << endl;
-	cout << "[6] Вывод дел по приоритету[development stage]" << endl;
-	cout << "[7] Вывод дел по дате[development stage]" << endl;
-	cout << "[8] Выход" << endl;
+	std::cout << "[1] Просмотр всех дел" << endl;
+	std::cout << "[2] Добавить дело" << endl;
+	std::cout << "[3] Удаление одного дела[unstable work]" << endl;
+	std::cout << "[4] Удаление всех дел" << endl;
+	std::cout << "[5] Поиск дел" << endl;
+	std::cout << "[6] Вывод дел по приоритету[development stage]" << endl;
+	std::cout << "[7] Вывод дел по дате[development stage]" << endl;
+	std::cout << "[8] Выход" << endl;
 }//вывод меню
 void importance() {
-	cout << "Выберите насколько важно это дело:\n\t1.Очень важно\n\t2.Важно\n\t3.Обычно\n\nОжидается выбор:";
+	std::cout << "Выберите насколько важно это дело:\n\t1.Очень важно\n\t2.Важно\n\t3.Обычно\n\nОжидается выбор:";
 }
 	
 void add_note() {
 	ofstream file("notes.txt", ios::app);
 	if (!file.is_open()) {
-		cout << "ERROR!! File isn't open!";
+		std::cout << "ERROR!! File isn't open!";
 		exit(EXIT_FAILURE);
 	}
 	{
 		
 		string note_name;
 		getline(cin, note_name);
-		cout << "Введите название дела:";
+		std::cout << "Введите название дела:";
 		getline(cin, note_name);
 		file << note_name << endl;
 	}//name note
 	{
-		cout << endl;
+		std::cout << endl;
 		importance();
 		int x = 0;
 		cin >> x;
@@ -55,7 +55,7 @@ void add_note() {
 		string description;
 		
 		getline(cin, description);
-		cout << "Введите описание дела:";
+		std::cout << "Введите описание дела:";
 		getline(cin, description);
 		file << description << endl;
 	}//note description
@@ -64,8 +64,9 @@ void add_note() {
 		unsigned int mounth=-5;
 		int year=0;
 		
-			cout << "Введите дату(формат:\"dd mm yyyy\"):";
+		std::cout << "Введите дату(формат:\"dd mm yyyy\"):";
 			cin >> day >> mounth >> year;
+			
 			if (mounth >= 9) {
 				string temp;
 				if (mounth == 1)
@@ -89,14 +90,15 @@ void add_note() {
 				file << day << "." << temp << "." << year << endl;
 			}
 			else
+			
 				file<<day<< "."<<mounth<<"." << year << endl;
 		}
 		
 	}//date
 
 	file.close();
-	cout <<endl<<"Ваше дело добавлена успешно!"<<endl;
-}//добавление заметок
+	std::cout <<endl<<"Ваше дело добавлена успешно!"<<endl;
+	}//добавление заметок
 
 void see_all_notes() {
 	ifstream file("notes.txt");
