@@ -92,23 +92,23 @@ void add_note() {
 			else
 			
 				file<<day<< "."<<mounth<<"." << year << endl;
-		}
+		}//date
 		
-	}//date
+}
 
 	file.close();
-	std::cout <<endl<<"Ваше дело добавлена успешно!"<<endl;
-	}//добавление заметок
+	std::cout << endl << "Ваше дело добавлена успешно!" << endl;
+	//добавление заметок
 
 void see_all_notes() {
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
-		cout << "Программа не может сделать вывод."<<endl;
+		cout << "Программа не может сделать вывод!"<<endl;
 		return;
 	}
 	string note_name,date,opisaniye,priority;
 	cout << "\t\tВсе дела:" << endl;
-	for (int i = 1;!file.eof(); i+3)
+	for (int i = 1;!file.eof(); i++)
 	{
 		getline(file, note_name);
 		getline(file, priority);
@@ -116,7 +116,7 @@ void see_all_notes() {
 		getline(file, date);
 		if (note_name.empty())
 			continue;
-		cout << '[' << "!" << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl;//TODO сделать вывод номера дела
+		cout << '[' << i << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl;//TODO сделать вывод номера дела
 	}
 
 	file.close();

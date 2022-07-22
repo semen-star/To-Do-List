@@ -1,26 +1,28 @@
 ﻿  Functions.cpp
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(75,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(77,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(79,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(81,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(83,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(85,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(87,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(89,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(99,6): error C3927: "->": конечный тип возвращаемого значения недопустим после оператора объявления, не относящегося к функции.
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(99,6): error C3484: синтаксическая ошибка: требуется "->" перед возвращающим типом
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(99,7): error C3613: отсутствует тип возвращаемого значения после "->" (предполагается int)
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(99,12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(99,7): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "close"
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(100,12): error C2143: синтаксическая ошибка: отсутствие ";" перед "<<"
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(100,12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(100,7): error C2371: std::cout: переопределение; различные базовые типы
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(75,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(77,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(79,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(81,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(83,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(85,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(87,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(89,11): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(99,6): error C3927: "->": конечный тип возвращаемого значения недопустим после оператора объявления, не относящегося к функции.
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(99,6): error C3484: синтаксическая ошибка: требуется "->" перед возвращающим типом
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(99,7): error C3613: отсутствует тип возвращаемого значения после "->" (предполагается int)
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(99,12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(99,7): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "close"
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(100,12): error C2143: синтаксическая ошибка: отсутствие ";" перед "<<"
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(100,12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(100,7): error C2371: std::cout: переопределение; различные базовые типы
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\iostream(40): message : см. объявление "std::cout"
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(101,2): error C2059: синтаксическая ошибка: }
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(101,2): error C2143: синтаксическая ошибка: отсутствие ";" перед "}"
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(103,22): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(103,22): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(129,7): error C2088: <<: недопустимо для class
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(163,8): error C2088: <<: недопустимо для class
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(193,8): error C2088: <<: недопустимо для class
-C:\Users\itstep\OneDrive\Рабочий стол\Семён проект\To-Do-List\TODOList\TODOlist\Functions.cpp(209,8): error C2088: <<: недопустимо для class
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(101,2): error C2059: синтаксическая ошибка: }
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(101,2): error C2143: синтаксическая ошибка: отсутствие ";" перед "}"
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(103,22): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(103,22): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(129,7): error C2088: <<: недопустимо для class
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(163,8): error C2088: <<: недопустимо для class
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(193,8): error C2088: <<: недопустимо для class
+C:\Users\itstep\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(209,8): error C2088: <<: недопустимо для class
+  TODOlist.cpp
+  Создание кода...
