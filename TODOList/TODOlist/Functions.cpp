@@ -21,7 +21,7 @@ void importance() {
 void add_note() {
 	ofstream file("notes.txt", ios::app);
 	if (!file.is_open()) {
-		std::cout << "ERROR!! File isn't open!";
+		cout << "Ошибка в работе с файловой системой!";
 		exit(EXIT_FAILURE);
 	}
 	{
@@ -60,50 +60,26 @@ void add_note() {
 		file << description << endl;
 	}//note description
 	{
-		unsigned int day=-5;
-		unsigned int mounth=-5;
+		int day=-5;
+		int mounth=-5;
 		int year=0;
 		
 		std::cout << "Введите дату(формат:\"dd mm yyyy\"):";
 			cin >> day >> mounth >> year;
 			
-			if (mounth >= 9) {
-				string temp;
-				if (mounth == 1)
-					temp = "01";
-				else if (mounth == 2)
-					temp == "02";
-				else if (mounth == 3)
-					temp == "03";
-				else if (mounth == 4)
-					temp == "04";
-				else if (mounth == 5)
-					temp == "05";
-				else if (mounth == 6)
-					temp == "06";
-				else if (mounth == 7)
-					temp == "07";
-				else if (mounth == 8)
-					temp == "08";
-				else if (mounth == 9)
-					temp == "09";
-				file << day << "." << temp << "." << year << endl;
-			}
-			else
-			
 				file<<day<< "."<<mounth<<"." << year << endl;
 		}//date
-		
-}
-
-	file.close();
+		file.close();
 	std::cout << endl << "Ваше дело добавлена успешно!" << endl;
 	//добавление заметок
+}
+
+	
 
 void see_all_notes() {
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
-		cout << "Программа не может сделать вывод!"<<endl;
+		cout << "Ошибка в работе с файловой системой!";
 		return;
 	}
 	string note_name,date,opisaniye,priority;
@@ -126,7 +102,7 @@ string* find_one_note(string& note_to_find, int& n_count) {
 	ifstream file("notes.txt");
 	if (!file.is_open())
 	{
-		cout<<"У вас нет заметок. Добавьте их!" << endl;
+		cout << "Ошибка в работе с файловой системой!";
 		return nullptr;
 	}
 	string one_note;
@@ -160,25 +136,26 @@ string* all_notes(int &n_count) {
 	string* all_notes_ptr = nullptr;
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
-		cout << "Файл не имеет заметок!"<<endl;
+		cout << "Ошибка в работе с файловой системой!";
 		exit(EXIT_FAILURE);
 	}
-	string one_note;
+	string note_name, date, opisaniye, priority;
 	int count = 0;
 	while (!file.eof()) {
-		getline(file, one_note);
-		if (one_note.empty())
+		getline(file, note_name);
+		getline(file, priority);
+		getline(file, opisaniye);
+		getline(file, date);
+		if (note_name.empty())
 			continue;
 		count++;
 		all_notes_ptr = new string[count];
 		for (int i = 0; i < count-1; i++)
 			all_notes_ptr[i] = all_notes[i];
-		all_notes_ptr[count - 1] = one_note;
+		all_notes_ptr[count - 1] = note_name;
 		delete[] all_notes;
 		all_notes = all_notes_ptr;
 		all_notes_ptr = nullptr;
-
-		
 	}
 
 	file.close();
@@ -190,23 +167,27 @@ void remove_one_note(string* all_notes_arr,int &count, int& choice) {
 	ofstream file("notes.txt");
 	if (!file.is_open())
 	{
-		cout << "Ошибка файл не может быть открыт!";
+		cout << "Ошибка в работе с файловой системой!";
 		exit(EXIT_FAILURE);
 	}
+	int z;
 	for (int i = 0; i < count; i++)
 	{
 		if (i==choice-1)
 			continue;
 		file << all_notes_arr[i] << endl;
+		z = i;
 	}
-
+	file << all_notes_arr[z+1] << endl;
+	file << all_notes_arr[z+2] << endl;
+	file << all_notes_arr[z+3] << endl;
 	file.close();
 }//удаление одной заметки
 
 void remove_all_notes() {
 	fstream file("notes.txt", ios::out, ios::trunc);
 	if (!file.is_open()) {
-		cout << "Ошибка. Файл не открыт!";
+		cout << "Ошибка в работе с файловой системой!"; 
 		exit(EXIT_FAILURE);
 	}
 		

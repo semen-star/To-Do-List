@@ -44,7 +44,7 @@ int main()
     system("cls");
     */
     while (x != 0) {
-        
+        system("cls");
         show_menu();
         cout << endl << "Сделайте выбор:";
         cin >> choice;
@@ -89,8 +89,14 @@ int main()
             int count = 0;
             string* all_notes_arr = all_notes(count);
             cout << "Выберите заметку для удаления:" << endl;
-            for (int i = 0; i < count; i++)
-                cout << "[" << i + 1 << "]" << all_notes_arr[i] << endl;
+            {int f = 0;
+            for (int i = 0; i < count; i + 3) {
+                cout << "["<<i<<"]" << all_notes_arr[f] << endl;
+                f++;
+            }
+                
+            }
+            
             cout << "Ввод:";
             int choice = 0;
             cin >> choice;
@@ -103,6 +109,7 @@ int main()
             remove_all_notes();
             cout << "Все заметки удалены." << endl;
             system("pause");
+            system("cls");
         }
         else if (choice == EXIT) {
             cout << "Are you shure? All affairs SAVE!\nif you are sure, then enter 1. Or enter 0\n\nInput:";
