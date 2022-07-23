@@ -14,24 +14,14 @@ void show_menu() {
 	std::cout << "[6] Редактирование дела" << endl;
 	std::cout << "[7] Выход" << endl;
 }//вывод меню
-void remove_date() {
-	fstream file("date.txt", ios::out, ios::trunc);
-	if (!file.is_open()) {
-		cout << "Ошибка в работе с файловой системой!";
-		exit(EXIT_FAILURE);
-	}
-
-	file.close();
-	system("cls");
-}
 void see_do() {
 	ifstream file_date("date.txt");
-	remove_date();
-	cout << "Как выводить дела?:\n\n\t1.По времени\n\t2.По приоритету\n\t3.Все дела" << endl;
+	cout << "Как выводить дела?:\n\n\t1.По времени\n\t2.По приоритету\n\t3.Все дела\nInput:" << endl;
 	int choice1 = 0;
 	cin >> choice1;
 	if (choice1 == 3)
 	{
+		system("cls");
 		see_all_notes();
 	}
 
@@ -45,24 +35,21 @@ void see_do() {
 		cout << "Введите дату сейчас(Формат \"dd mm yyyy\"):";
 		cin >> now_day >> now_mounth >> now_year;
 		system("cls");
-		cout << "Как по времени сделать вывод?:\n\n\t1.На день\n\t2.На неделю\n\t3.На месяц\n\t4.По времени чем ближе." << endl;
+		cout << "Как по времени сделать вывод?:\n\n\t1.На день[unstable work]\n\t2.На неделю[unstable work]\n\t3.На месяц[unstable work]\n\t4.По времени чем ближе[does not work]." << endl;
 		int choice2;
 		cin >> choice2;
 		if (choice2 == 1) {
 			int day_to_see = now_day + 1;
-			file_date >> day_to_see >> now_mounth >> now_year;
-			see_to_day();
-
+			see_to_day(day_to_see, now_mounth, now_year);
 		}
 		else if (choice2 == 2) {
 			int day_to_see = now_day + 7;
-			file_date >> day_to_see >> now_mounth >> now_year;
-			see_to_day();
+			see_to_day(day_to_see, now_mounth, now_year);
 		}
 		else if (choice2 == 2) {
 			int mounth_to_see = now_mounth + 1;
-			file_date >> now_day >> mounth_to_see >> now_year;
-			see_to_mounth();
+			file_date  >> now_day >> mounth_to_see >> now_year;
+			see_to_mounth(now_day, mounth_to_see, now_year);
 		}
 	}
 }
@@ -113,7 +100,7 @@ void see_priority_notes() {
 
 	file.close();
 }
-void see_to_day() {
+void see_to_day(int day, int mounth, int year) {
 	ifstream file("notes.txt");
 	ifstream file_date("date.txt");
 	if (!file.is_open()) {
@@ -138,7 +125,7 @@ void see_to_day() {
 
 	file.close();
 }
-void see_to_mounth() {
+void see_to_mounth(int day, int mounth, int year) {
 	ifstream file("notes.txt");
 	ifstream file_date("date.txt");
 	if (!file.is_open()) {
@@ -149,6 +136,8 @@ void see_to_mounth() {
 	getline(file_date, now_date);
 	string note_name, date, opisaniye, priority;
 	cout << "\t\tВсе дела:" << endl;
+	string now_date;
+	now_date = "day.mounth.year";//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	for (int i = 1; !file.eof(); i++)
 	{
 		getline(file, note_name);

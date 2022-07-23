@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <ctime>
 #include "Functions.h"
 using namespace std;
 
