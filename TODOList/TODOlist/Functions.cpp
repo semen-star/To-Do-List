@@ -10,10 +10,8 @@ void show_menu() {
 	std::cout << "[3] Удаление одного дела" << endl;
 	std::cout << "[4] Удаление всех дел" << endl;
 	std::cout << "[5] Поиск дел" << endl;
-	std::cout << "[6] Вывод дел по приоритету[development stage]" << endl;
-	std::cout << "[7] Вывод дел по дате[development stage]" << endl;
-	std::cout << "[8] Редактирование дела" << endl;
-	std::cout << "[9] Выход" << endl;
+	std::cout << "[6] Редактирование дела" << endl;
+	std::cout << "[7] Выход" << endl;
 }//вывод меню
 void remove_date() {
 	fstream file("date.txt", ios::out, ios::trunc);
@@ -46,23 +44,22 @@ void see_do() {
 		cin >> choice2;
 		if (choice2 == 1) {
 			int day_to_see = now_day + 1;
-			file_date << day_to_see << "." << now_mounth << "." << now_year << endl;
+			file_date >> day_to_see >>"." >> now_mounth >> "." >> now_year >> endl;
 			see_to_day();
 
 		}
 		else if (choice2 == 2) {
 			int day_to_see = now_day + 7;
-			file_date << day_to_see << "." << now_mounth << "." << now_year << endl;
+			file_date >> day_to_see >> "." >> now_mounth >> "." >> now_year >> endl;
 			see_to_day();
 		}
 		else if (choice2 == 2) {
 			int mounth_to_see = now_mounth + 1;
-			file_date << now_day << "." << mounth_to_see << "." << now_year << endl;
+			file_date >> now_day >> "." >> mounth_to_see >> "." >> now_year >> endl;
 			see_to_mounth();
 		}
 	}
 }
-
 void see_priority_notes() {
 	ifstream file("notes.txt");
 	if (!file.is_open()) {

@@ -11,8 +11,6 @@ enum CHOICE {
    DELETE_ONE_NOTE,
    DELETE_ALL_NOTES,
    FIND_NOTE,
-   SEE_PRIORITY_NOTES,//development stage
-   SEE_DATE_NOTES,//development stage
    EDIT,
    EXIT
 };
