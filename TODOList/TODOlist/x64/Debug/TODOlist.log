@@ -1,8 +1,4 @@
 ﻿  Functions.cpp
-C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(34,3): error C3861: see_all_notes: идентификатор не найден
-C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(36,3): error C3861: see_priority_notes: идентификатор не найден
-C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(49,4): error C3861: see_to_day: идентификатор не найден
-C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(55,4): error C3861: see_to_day: идентификатор не найден
-C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(60,4): error C3861: see_to_mounth: идентификатор не найден
   TODOlist.cpp
   Создание кода...
+  TODOlist.vcxproj -> D:\FOR_STUDENTS_GIT_PROJECTS\To-Do-List\TODOList\x64\Debug\TODOlist.exe

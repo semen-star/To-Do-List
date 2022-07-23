@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <windows.h>
+#include "Functions.h"
 using namespace std;
 
 void show_menu() {
@@ -30,9 +31,14 @@ void see_do() {
 	int choice1 = 0;
 	cin >> choice1;
 	if (choice1 == 3)
+	{
 		see_all_notes();
-	else if (choice1 == 2) 
+	}
+
+	else if (choice1 == 2) {
 		see_priority_notes();
+	}
+	
 	else if (choice1 == 1) {
 		system("cls");
 		int now_day, now_mounth, now_year;
@@ -44,18 +50,18 @@ void see_do() {
 		cin >> choice2;
 		if (choice2 == 1) {
 			int day_to_see = now_day + 1;
-			file_date >> day_to_see >>"." >> now_mounth >> "." >> now_year >> endl;
+			file_date >> day_to_see >> now_mounth >> now_year;
 			see_to_day();
 
 		}
 		else if (choice2 == 2) {
 			int day_to_see = now_day + 7;
-			file_date >> day_to_see >> "." >> now_mounth >> "." >> now_year >> endl;
+			file_date >> day_to_see >> now_mounth >> now_year;
 			see_to_day();
 		}
 		else if (choice2 == 2) {
 			int mounth_to_see = now_mounth + 1;
-			file_date >> now_day >> "." >> mounth_to_see >> "." >> now_year >> endl;
+			file_date >> now_day >> mounth_to_see >> now_year;
 			see_to_mounth();
 		}
 	}
