@@ -13,6 +13,7 @@ enum CHOICE {
    FIND_NOTE,
    SEE_PRIORITY_NOTES,//development stage
    SEE_DATE_NOTES,//development stage
+   EDIT,
    EXIT
 };
 /*
@@ -57,7 +58,7 @@ int main()
         }
         else if (choice == SEE_ALL_NOTES) {
             system("cls");
-            see_all_notes();
+            see_do();
             cout << endl << endl;
             system("pause");
             system("cls");
@@ -74,8 +75,8 @@ int main()
             if (found_notes)
             {
                 cout << "Найденые заметки:"<<endl;
-                for (int i = 0; i < n_found; i++)
-                    cout << found_notes[i] << endl;
+                for (int i = 0; i < n_found; i++) 
+                    cout << found_notes[i] << endl;   
                 delete[] found_notes;
                 cout << endl;
             }
@@ -88,18 +89,16 @@ int main()
             system("cls");
             int count = 0;
             string* all_notes_arr = all_notes(count);
+            cout << "ВНИМАНИЕ! ВЫБИРАЙТЕ ПО ИМЕНИ ВАШЕ ДЕЛО И ВВОДИТЕ НОМЕР ИМЕНИ!!!" << endl;
+            Sleep(3000);
             cout << "Выберите заметку для удаления:" << endl;
-            {int f = 0;
-            for (int i = 0; i < count; i + 3) {
-                cout << "["<<i<<"]" << all_notes_arr[f] << endl;
-                f++;
+            for (int i = 0; i < count; i ++) {
+                cout << "["<<i+1<<"]" << all_notes_arr[i] << endl;
             }
-                
-            }
-            
             cout << "Ввод:";
             int choice = 0;
             cin >> choice;
+            choice -= 1;
             remove_one_note(all_notes_arr, count, choice);
             delete[] all_notes_arr;
             system("pause");
@@ -108,6 +107,12 @@ int main()
             system("cls");
             remove_all_notes();
             cout << "Все заметки удалены." << endl;
+            system("pause");
+            system("cls");
+        }
+        else if (choice == EDIT) {
+            system("cls");
+            editing();
             system("pause");
             system("cls");
         }
@@ -122,6 +127,7 @@ int main()
                 x = 0;
             }
         }
+
         else {
             cout << "ERROR!";
             cout << endl;
@@ -136,5 +142,6 @@ int main()
             Sleep(2000);
         }
         //good buy to red color
+        
         return 0;
     }
