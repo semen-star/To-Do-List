@@ -6,7 +6,10 @@ using namespace std;
 void show_menu();//Вывод меню
 
 void add_note();//добавление дела
-
+void see_to_day();
+void see_to_mounth();
+void see_all_notes();
+void see_priority_notes();
 void see_do();//Показать все дела
 
 string* find_one_note(string&note_to_find, int &n_count);//найти дело
