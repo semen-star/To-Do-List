@@ -16,7 +16,7 @@ void show_menu() {
 }//вывод меню
 void see_do() {
 	ifstream file_date("date.txt");
-	cout << "Как выводить дела?:\n\n\t1.По времени\n\t2.По приоритету\n\t3.Все дела\nInput:" << endl;
+	cout << "Как выводить дела?:\n\n\t1.По времени[No Work!!]\n\t2.По приоритету\n\t3.Все дела\nInput:" << endl;
 	int choice1 = 0;
 	cin >> choice1;
 	if (choice1 == 3)
@@ -48,20 +48,24 @@ void see_do() {
 		}
 		else if (choice2 == 3) {
 			int mounth_to_see = now_mounth + 1;
-			file_date  >> now_day >> mounth_to_see >> now_year;
-			see_to_mounth(now_day, mounth_to_see, now_year);
+			see_to_day(now_day, mounth_to_see, now_year);
 		}
 	}
 }
 void see_priority_notes() {
+	system("cls");
+	cout << "\t\tВсе дела по важности:" << endl;
+	really_important();
+	important();
+	the_usual();
+}
+void really_important() {
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
 		cout << "Ошибка в работе с файловой системой!";
 		return;
 	}
-
 	string note_name, date, opisaniye, priority;
-	cout << "\t\tВсе дела по важности:" << endl;
 	for (int i = 1; !file.eof(); i++)
 	{
 		getline(file, note_name);
@@ -70,10 +74,18 @@ void see_priority_notes() {
 		getline(file, date);
 		if (note_name.empty())
 			continue;
-		if(priority=="Очень важно")
+		if (priority == "Очень важно")
 			cout << '[' << i << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl;//TODO сделать вывод номера дела
 	}
-
+	file.close();
+}
+void important() {
+	ifstream file("notes.txt");
+	if (!file.is_open()) {
+		cout << "Ошибка в работе с файловой системой!";
+		return;
+	}
+	string note_name, date, opisaniye, priority;
 	for (int i = 1; !file.eof(); i++)
 	{
 		getline(file, note_name);
@@ -85,7 +97,15 @@ void see_priority_notes() {
 		if (priority == "Важно")
 			cout << '[' << i << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl;//TODO сделать вывод номера дела
 	}
-
+	file.close();
+}
+void the_usual() {
+	ifstream file("notes.txt");
+	if (!file.is_open()) {
+		cout << "Ошибка в работе с файловой системой!";
+		return;
+	}
+	string note_name, date, opisaniye, priority;
 	for (int i = 1; !file.eof(); i++)
 	{
 		getline(file, note_name);
@@ -97,10 +117,9 @@ void see_priority_notes() {
 		if (priority == "Обычно")
 			cout << '[' << i << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl;//TODO сделать вывод номера дела
 	}
-
 	file.close();
 }
-void see_to_day(int day_to_see, int mounth, int year) {
+void see_to_day(int day, int mounth, int year) {
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
 		cout << "Ошибка в работе с файловой системой!";
@@ -108,8 +127,9 @@ void see_to_day(int day_to_see, int mounth, int year) {
 	}
 	string note_name, date, opisaniye, priority;
 	int note_day, note_mounth, note_year;
+	cout << "     day: " << day << "     \tmounth: " << mounth << "    \t year: " << year << endl;
 	cout << "\t\tВсе дела:" << endl;
-	for (int i = 1; !file.eof(); i++){
+	for (int i = 0; !file.eof(); i++){
 		getline(file, note_name);
 		getline(file, priority);
 		getline(file, opisaniye);
@@ -119,35 +139,12 @@ void see_to_day(int day_to_see, int mounth, int year) {
 		note_year = date[6,7,8,9];
 		if (note_name.empty())
 			continue;
-		if(note_day <= day_to_see and note_mounth == mounth and note_year==year)
-			cout << '[' << i << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl;//TODO сделать вывод номера дела
+		cout << "note_day: " << note_day << "\tnote_mounth: " << note_mounth << "\tnote_year: " << note_year << endl;
+		
+		if (note_day <= day and note_mounth <= mounth and note_year <= year)
+			cout << '[' << i << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl << endl;//TODO сделать вывод номера дела
 	}
-
-	file.close();
-}
-void see_to_mounth(int day, int mounth_to_see, int year) {
-	ifstream file("notes.txt");
-	if (!file.is_open()) {
-		cout << "Ошибка в работе с файловой системой!";
-		return;
-	}
-	int note_day,note_mounth,note_year;
-	string note_name, date, opisaniye, priority;
-	cout << "\t\tВсе дела:" << endl;
-	for (int i = 1; !file.eof(); i++) {
-		getline(file, note_name);
-		getline(file, priority);
-		getline(file, opisaniye);
-		getline(file, date);
-		note_day = date[0, 1];
-		note_mounth = date[3, 4];
-		note_year = date[6, 7, 8, 9];
-		if (note_name.empty())
-			continue;
-		if (note_day <= day and note_mounth == mounth_to_see and note_year == year)
-			cout << '[' << i << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl;//TODO сделать вывод номера дела
-	}
-
+	cout << endl << endl << "Так выглядит ошибка в считывании даты из файла";
 	file.close();
 }
 void see_all_notes() {
@@ -243,6 +240,8 @@ void add_note() {
 				redact_day = "08";
 			else if (day == 9)
 				redact_day = "09";
+			else if (day == 10)
+				redact_day = "10";
 			else
 				redact_day = day;
 
@@ -264,6 +263,8 @@ void add_note() {
 				redact_mounth = "08";
 			else if (mounth == 9)
 				redact_mounth = "09";
+			else if (mounth == 10)
+				redact_mounth = "10";
 			else
 				redact_mounth = mounth;
 
@@ -347,10 +348,7 @@ void remove_one_note(string* all_notes_arr,int &count, int& choice) {
 		exit(EXIT_FAILURE);
 	}
 	
-	for (int i = 0; i < count; i++)
-	{
-		if (i==choice-1)
-			continue;
+	for (int i = 0; i < count; i++){
 		if (i == choice)
 			continue;
 		if (i == choice + 1)
@@ -374,7 +372,7 @@ void remove_all_notes() {
 		
 	file.close();
 	system("cls");
-	cout << "Дело удалено!" << endl;
+	cout << "Дела удалены!" << endl;
 	Sleep(2000);
 }//удаление всех заметок
 
