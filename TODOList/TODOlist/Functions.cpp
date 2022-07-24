@@ -46,7 +46,7 @@ void see_do() {
 			int day_to_see = now_day + 7;
 			see_to_day(day_to_see, now_mounth, now_year);
 		}
-		else if (choice2 == 2) {
+		else if (choice2 == 3) {
 			int mounth_to_see = now_mounth + 1;
 			file_date  >> now_day >> mounth_to_see >> now_year;
 			see_to_mounth(now_day, mounth_to_see, now_year);
@@ -100,53 +100,51 @@ void see_priority_notes() {
 
 	file.close();
 }
-void see_to_day(int day, int mounth, int year) {
+void see_to_day(int day_to_see, int mounth, int year) {
 	ifstream file("notes.txt");
-	ifstream file_date("date.txt");
 	if (!file.is_open()) {
 		cout << "Ошибка в работе с файловой системой!";
 		return;
 	}
-	string now_date;
-	getline(file_date, now_date);
 	string note_name, date, opisaniye, priority;
+	int note_day, note_mounth, note_year;
 	cout << "\t\tВсе дела:" << endl;
-	for (int i = 1; !file.eof(); i++)
-	{
+	for (int i = 1; !file.eof(); i++){
 		getline(file, note_name);
 		getline(file, priority);
 		getline(file, opisaniye);
 		getline(file, date);
+		note_day = date[0, 1];
+		note_mounth = date[3, 4];
+		note_year = date[6,7,8,9];
 		if (note_name.empty())
 			continue;
-		if(date<=now_date)
+		if(note_day <= day_to_see and note_mounth == mounth and note_year==year)
 			cout << '[' << i << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl;//TODO сделать вывод номера дела
 	}
 
 	file.close();
 }
-void see_to_mounth(int day, int mounth, int year) {
+void see_to_mounth(int day, int mounth_to_see, int year) {
 	ifstream file("notes.txt");
-	ifstream file_date("date.txt");
 	if (!file.is_open()) {
 		cout << "Ошибка в работе с файловой системой!";
 		return;
 	}
-	string now_date;
-	getline(file_date, now_date);
+	int note_day,note_mounth,note_year;
 	string note_name, date, opisaniye, priority;
 	cout << "\t\tВсе дела:" << endl;
-	string now_date;
-	now_date = "day.mounth.year";//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	for (int i = 1; !file.eof(); i++)
-	{
+	for (int i = 1; !file.eof(); i++) {
 		getline(file, note_name);
 		getline(file, priority);
 		getline(file, opisaniye);
 		getline(file, date);
+		note_day = date[0, 1];
+		note_mounth = date[3, 4];
+		note_year = date[6, 7, 8, 9];
 		if (note_name.empty())
 			continue;
-		if (date <= now_date)
+		if (note_day <= day and note_mounth == mounth_to_see and note_year == year)
 			cout << '[' << i << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl;//TODO сделать вывод номера дела
 	}
 
@@ -223,11 +221,56 @@ void add_note() {
 		int day=-5;
 		int mounth=-5;
 		int year=0;
-		
 		cout << "Введите дату(формат:\"dd mm yyyy\"):";
-			cin >> day >> mounth >> year;
-			
-				file<<day<< "."<<mounth<<"." << year << endl;
+		cin >> day >> mounth >> year;
+		if (day < 10 or mounth<10) {
+			string redact_day,redact_mounth;
+			if (day == 1)
+				redact_day = "01";
+			else if (day == 2)
+				redact_day = "02";
+			else if (day == 3)
+				redact_day = "03";
+			else if (day == 4)
+				redact_day = "04";
+			else if (day == 5)
+				redact_day = "05";
+			else if (day == 6)
+				redact_day = "06";
+			else if (day == 7)
+				redact_day = "07";
+			else if (day == 8)
+				redact_day = "08";
+			else if (day == 9)
+				redact_day = "09";
+			else
+				redact_day = day;
+
+			if (mounth == 1)
+				redact_mounth = "01";
+			else if (mounth == 2)
+				redact_mounth = "02";
+			else if (mounth == 3)
+				redact_mounth = "03";
+			else if (mounth == 4)
+				redact_mounth = "04";
+			else if (mounth == 5)
+				redact_mounth = "05";
+			else if (mounth == 6)
+				redact_mounth = "06";
+			else if (mounth == 7)
+				redact_mounth = "07";
+			else if (mounth == 8)
+				redact_mounth = "08";
+			else if (mounth == 9)
+				redact_mounth = "09";
+			else
+				redact_mounth = mounth;
+
+			file << redact_day << "." << redact_mounth << "." << year << endl;
+		}
+		else
+			file<<day<< "."<<mounth<<"." << year << endl;
 		}//date
 		file.close();
 	std::cout << endl << "Ваше дело добавлена успешно!" << endl;

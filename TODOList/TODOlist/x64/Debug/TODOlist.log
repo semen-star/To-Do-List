@@ -1,4 +1,7 @@
 ﻿  Functions.cpp
-  TODOlist.cpp
-  Создание кода...
-  TODOlist.vcxproj -> C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\x64\Debug\TODOlist.exe
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(43,47): error C2660: see_to_day: функция не принимает 3 аргументов
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.h(9,6): message : см. объявление "see_to_day"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(47,47): error C2660: see_to_day: функция не принимает 3 аргументов
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.h(9,6): message : см. объявление "see_to_day"
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(52,50): error C2660: see_to_mounth: функция не принимает 3 аргументов
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.h(10,6): message : см. объявление "see_to_mounth"
