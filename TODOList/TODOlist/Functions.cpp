@@ -139,6 +139,8 @@ void see_to_day(int day, int mounth, int year) {
 		note_year = date[6,7,8,9];
 		if (note_name.empty())
 			continue;
+		cout << date;
+		cout << endl;
 		cout << "note_day: " << note_day << "\tnote_mounth: " << note_mounth << "\tnote_year: " << note_year << endl;
 		
 		if (note_day <= day and note_mounth <= mounth and note_year <= year)
