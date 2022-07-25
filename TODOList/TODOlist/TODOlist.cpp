@@ -15,18 +15,7 @@ enum CHOICE {
    EDIT,
    EXIT
 };
-/*
-struct affairs {
-    char name;
-    int priority;
-    char description;
-};
-struct date {
-        unsigned int day;
-        unsigned int mounth;
-        int year;
-    };
-    */
+
 int main()
 {
     setlocale(LC_ALL, ""); 
@@ -34,15 +23,10 @@ int main()
     HANDLE hOUTPUT = GetStdHandle(STD_OUTPUT_HANDLE);
     int choice = 0;
     cout << "Внимание! Дела хранятся в памяти.\n\nУ всех дел есть несколько критериев. Спасибо за использование.\n\nP.s. Автор приколист.";
-    //Sleep(3000);
+    Sleep(5000);
     bool x = 1;
     int z=1;
     system("cls");
-    /*
-    cout << "Введите количество заметок:";
-    cin >> z;
-    system("cls");
-    */
     while (x != 0) {
         system("cls");
         show_menu();
