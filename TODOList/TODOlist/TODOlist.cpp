@@ -22,7 +22,7 @@ int main()
     SetConsoleCP(1251);
     HANDLE hOUTPUT = GetStdHandle(STD_OUTPUT_HANDLE);
     int choice = 0;
-    cout << "Внимание! Дела хранятся в памяти.\n\nУ всех дел есть несколько критериев. Спасибо за использование.\n\nP.s. Автор приколист.";
+    cout << "Attention! Cases are stored in memory.\n\nAll cases have several criteria. Thanks for using it.";
     Sleep(5000);
     bool x = 1;
     int z=1;
@@ -30,7 +30,7 @@ int main()
     while (x != 0) {
         system("cls");
         show_menu();
-        cout << endl << "Сделайте выбор:";
+        cout << endl << "Make a choice:";
         cin >> choice;
         if (choice == ADD_NOTE) {
             system("cls");
@@ -49,22 +49,22 @@ int main()
         else if (choice == FIND_NOTE) {
             system("cls");
             string note_to_find;
-            cout << "ВНИМАНИЕ! Введите только одно слово для поиска!"<<endl;
+            cout << "Attention! Enter only one word to search for!"<<endl;
             getline(cin, note_to_find);
-            cout << "Слово для поиска:";
+            cout << "Search word:";
             getline(cin, note_to_find);
             int n_found = 0;
             string* found_notes = find_one_note(note_to_find, n_found);
             if (found_notes)
             {
-                cout << "Найденые заметки:"<<endl;
+                cout << "Found notes:"<<endl;
                 for (int i = 0; i < n_found; i++) 
                     cout << found_notes[i] << endl;   
                 delete[] found_notes;
                 cout << endl;
             }
             else
-                cout << "Извините, я не нашёл нужных заметок." << endl;
+                cout << "Sorry, I didn't find the necessary notes." << endl;
 
             system("pause");
         }
@@ -72,13 +72,13 @@ int main()
             system("cls");
             int count = 0;
             string* all_notes_arr = all_notes(count);
-            cout << "ВНИМАНИЕ! ВЫБИРАЙТЕ ПО ИМЕНИ ВАШЕ ДЕЛО И ВВОДИТЕ НОМЕР ИМЕНИ!!!" << endl;
+            cout << "Attention! CHOOSE YOUR CASE BY NAME AND ENTER THE NAME NUMBER!!!" << endl;
             Sleep(3000);
-            cout << "Выберите заметку для удаления:" << endl;
+            cout << "Select the note to delete:" << endl;
             for (int i = 0; i < count; i ++) {
                 cout << "["<<i+1<<"]" << all_notes_arr[i] << endl;
             }
-            cout << "Ввод:";
+            cout << "Input:";
             int choice = 0;
             cin >> choice;
             choice -= 1;
@@ -89,7 +89,7 @@ int main()
         else if (choice == DELETE_ALL_NOTES) {
             system("cls");
             remove_all_notes();
-            cout << "Все заметки удалены." << endl;
+            cout << "All notes deleted." << endl;
             system("pause");
             system("cls");
         }

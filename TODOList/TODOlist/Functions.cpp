@@ -6,17 +6,17 @@
 using namespace std;
 
 void show_menu() {
-	std::cout << "[1] Вывод дел" << endl;
-	std::cout << "[2] Добавить дело" << endl;
-	std::cout << "[3] Удаление одного дела" << endl;
-	std::cout << "[4] Удаление всех дел" << endl;
-	std::cout << "[5] Поиск дел" << endl;
-	std::cout << "[6] Редактирование дела" << endl;
-	std::cout << "[7] Выход" << endl;
+	std::cout << "[1] Conclusion to make" << endl;
+	std::cout << "[2] Add a case" << endl;
+	std::cout << "[3] Deleting one case" << endl;
+	std::cout << "[4] Deleting all cases" << endl;
+	std::cout << "[5] Search for cases" << endl;
+	std::cout << "[6] Editing a case" << endl;
+	std::cout << "[7] Exit" << endl;
 }//вывод меню
 void see_do() {
 	ifstream file_date("date.txt");
-	cout << "Как выводить дела?:\n\n\t1.По времени[No Work!!]\n\t2.По приоритету\n\t3.Все дела\nInput:" << endl;
+	cout << "How to display cases?:\n\n\t1.By Time[No Work!!]\n\t2.By priority \n\t3.All cases\input:" << endl;
 	int choice1 = 0;
 	cin >> choice1;
 	if (choice1 == 3)
@@ -32,10 +32,10 @@ void see_do() {
 	else if (choice1 == 1) {
 		system("cls");
 		int now_day, now_mounth, now_year;
-		cout << "Введите дату сейчас(Формат \"dd mm yyyy\"):";
+		cout << "Enter the date now (Format \"dd mm yyyy\"):";
 		cin >> now_day >> now_mounth >> now_year;
 		system("cls");
-		cout << "Как по времени сделать вывод?:\n\n\t1.На день[unstable work]\n\t2.На неделю[unstable work]\n\t3.На месяц[unstable work]\n\t4.По времени чем ближе[does not work]." << endl;
+		cout << "How to make a conclusion in time?:\n\n\t1.For the day[unstable work]\n\t2.For a week[unstable work]\n\t3.For a month[unstable work]\n\t4.By time the closer[does not work]." << endl;
 		int choice2;
 		cin >> choice2;
 		if (choice2 == 1) {
@@ -54,7 +54,7 @@ void see_do() {
 }
 void see_priority_notes() {
 	system("cls");
-	cout << "\t\tВсе дела по важности:" << endl;
+	cout << "\t\tAll matters of importance:" << endl;
 	really_important();
 	important();
 	the_usual();
@@ -62,7 +62,7 @@ void see_priority_notes() {
 void really_important() {
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
-		cout << "Ошибка в работе с файловой системой!";
+		cout << "Error in working with the file system!";
 		return;
 	}
 	string note_name, date, opisaniye, priority;
