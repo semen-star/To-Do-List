@@ -1,2 +1,6 @@
-﻿  TODOlist.cpp
+﻿  Functions.cpp
+C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\TODOlist\Functions.cpp(19,10): warning C4129: i: неизвестная escape-последовательность
+  TODOlist.cpp
+  Создание кода...
+  LINK : не найден или не выполнена сборка C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\x64\Debug\TODOlist.exe при последней инкрементной компоновке; выполняется полная компоновка
   TODOlist.vcxproj -> C:\Users\Семён\Desktop\exam work\To-Do-List\TODOList\x64\Debug\TODOlist.exe

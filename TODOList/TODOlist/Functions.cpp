@@ -75,14 +75,14 @@ void really_important() {
 		if (note_name.empty())
 			continue;
 		if (priority == "Очень важно")
-			cout << '[' << i << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl;//TODO сделать вывод номера дела
+			cout << '[' << i << ']' << endl << "\work team: " << note_name << endl << "\t Priority of work: " << priority << endl << "\job description: " << opisaniye << endl << "\t date of work: " << date << endl;
 	}
 	file.close();
 }
 void important() {
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
-		cout << "Ошибка в работе с файловой системой!";
+		cout << "Error in working with the file system!";
 		return;
 	}
 	string note_name, date, opisaniye, priority;
@@ -95,14 +95,14 @@ void important() {
 		if (note_name.empty())
 			continue;
 		if (priority == "Важно")
-			cout << '[' << i << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl;//TODO сделать вывод номера дела
+			cout << '[' << i << ']' << endl << "\work team: " << note_name << endl << "\t Priority of work: " << priority << endl << "\job description: " << opisaniye << endl << "\t date of work: " << date << endl;
 	}
 	file.close();
 }
 void the_usual() {
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
-		cout << "Ошибка в работе с файловой системой!";
+		cout << "Error in working with the file system!";
 		return;
 	}
 	string note_name, date, opisaniye, priority;
@@ -115,20 +115,20 @@ void the_usual() {
 		if (note_name.empty())
 			continue;
 		if (priority == "Обычно")
-			cout << '[' << i << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl;//TODO сделать вывод номера дела
+			cout << '[' << i << ']' << endl << "\work team: " << note_name << endl << "\t Priority of work: " << priority << endl << "\job description: " << opisaniye << endl << "\t date of work: " << date << endl;
 	}
 	file.close();
 }
 void see_to_day(int day, int mounth, int year) {
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
-		cout << "Ошибка в работе с файловой системой!";
+		cout << "Error in working with the file system!";
 		return;
 	}
 	string note_name, date, opisaniye, priority;
 	int note_day, note_mounth, note_year;
 	cout << "     day: " << day << "     \tmounth: " << mounth << "    \t year: " << year << endl;
-	cout << "\t\tВсе дела:" << endl;
+	cout << "\t\tAll cases:" << endl;
 	for (int i = 0; !file.eof(); i++){
 		getline(file, note_name);
 		getline(file, priority);
@@ -146,17 +146,17 @@ void see_to_day(int day, int mounth, int year) {
 		if (note_day <= day and note_mounth <= mounth and note_year <= year)
 			cout << '[' << i << ']' << endl << "\tИмя дела: " << note_name << endl << "\tПриоритет дела: " << priority << endl << "\tОписание дела: " << opisaniye << endl << "\tДата дела: " << date << endl << endl;//TODO сделать вывод номера дела
 	}
-	cout << endl << endl << "Так выглядит ошибка в считывании даты из файла";
+	cout << endl << endl << "This is what the error looks like in reading the date from the file";
 	file.close();
 }
 void see_all_notes() {
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
-		cout << "Ошибка в работе с файловой системой!";
+		cout << "Error in working with the file system!";
 		return;
 	}
 	string note_name,date,opisaniye,priority;
-	cout << "\t\tВсе дела:" << endl;
+	cout << "\t\tAll cases:" << endl;
 	for (int i = 1;!file.eof(); i++)
 	{
 		getline(file, note_name);
@@ -172,20 +172,20 @@ void see_all_notes() {
 }//просмотр всех заметок в файле
 
 void importance() {
-	std::cout << "Выберите насколько важно это дело:\n\t1.Очень важно\n\t2.Важно\n\t3.Обычно\n\nОжидается выбор:";
+	std::cout << "Choose how important this case is:\n\t1.Очень важно(Very important)\n\t2.Важно(important)\n\t3.Usually\n\nA choice is expected:";
 }
 	
 void add_note() {
 	ofstream file("notes.txt", ios::app);
 	if (!file.is_open()) {
-		cout << "Ошибка в работе с файловой системой!";
+		cout << "Error in working with the file system!";
 		exit(EXIT_FAILURE);
 	}
 	{
 		
 		string note_name;
 		getline(cin, note_name);
-		std::cout << "Введите название дела:";
+		std::cout << "Enter the name of the case:";
 		getline(cin, note_name);
 		file << note_name << endl;
 	}//name note
@@ -212,7 +212,7 @@ void add_note() {
 		string description;
 		
 		getline(cin, description);
-		std::cout << "Введите описание дела:";
+		std::cout << "Enter a description of the case:";
 		getline(cin, description);
 		file << description << endl;
 	}//note description
@@ -220,7 +220,7 @@ void add_note() {
 		int day=-5;
 		int mounth=-5;
 		int year=0;
-		cout << "Введите дату(формат:\"dd mm yyyy\"):";
+		cout << "Enter the date(format:\"dd mm yyyy\"):";
 		cin >> day >> mounth >> year;
 		if (day < 10 or mounth<10) {
 			string redact_day,redact_mounth;
